@@ -15,7 +15,6 @@ interface Props {
 const SearchPage: React.FC<Props> = ({ onSelect }) => {
   const navigate = useNavigate();
   const [propertiesData, setProperties] = useState<Property[]>([]);
-  console.log("propertiesData: ", propertiesData);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {

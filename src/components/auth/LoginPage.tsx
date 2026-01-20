@@ -97,12 +97,6 @@ const LoginPage: React.FC<LoginPageProps> = ({ onLogin }) => {
                 <label className="text-[13px] font-bold uppercase tracking-wider text-gray-400">
                   Password
                 </label>
-                <button
-                  type="button"
-                  className="text-[12px] text-gray-400 hover:text-black transition-colors"
-                >
-                  Forgot?
-                </button>
               </div>
               <div className="relative group">
                 <Lock className="absolute left-0 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-300 group-focus-within:text-black transition-colors" />
@@ -119,7 +113,11 @@ const LoginPage: React.FC<LoginPageProps> = ({ onLogin }) => {
                   onClick={() => setShowPassword(!showPassword)}
                   className="absolute right-0 top-1/2 -translate-y-1/2 text-gray-400 hover:text-black transition-colors"
                 >
-                  {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+                  {showPassword ? (
+                    <EyeOff size={18} className="cursor-pointer" />
+                  ) : (
+                    <Eye size={18} className="cursor-pointer" />
+                  )}
                 </button>
               </div>
             </div>
