@@ -23,7 +23,7 @@ const DetailPage: React.FC<DetailPageProps> = ({ property }) => {
   const [isFavorite, setIsFavorite] = useState(false);
   const [expandedImage, setExpandedImage] = useState<string | null>(null);
   const [isMapExpanded, setIsMapExpanded] = useState(false);
-  const bedrooms = property.attributes.bedrooms;
+  const bedrooms = property.attributes.bedroom;
   const sqm = 58;
   const neighborhood = "FontVilena";
   const pricePerSqm = Math.floor(property.attributes.price / sqm);
@@ -253,7 +253,8 @@ const DetailPage: React.FC<DetailPageProps> = ({ property }) => {
                       href={`tel:${property.attributes.crm_negotiator_id.work_phone}`}
                       className="hover:text-gray-900 hover:underline transition-colors"
                     >
-                      {property.attributes.crm_negotiator_id.work_phone}
+                      {property.attributes.crm_negotiator_id.work_phone ||
+                        "999999999"}
                     </a>
                     <span className="text-gray-400">|</span>
                     <a

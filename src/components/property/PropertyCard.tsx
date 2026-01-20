@@ -54,13 +54,14 @@ const PropertyCard: React.FC<PropertyCardProps> = ({ property, onSelect }) => {
         </button>
       </div>
 
-      {/* CONTENT CONTAINER - Centered design matching search results */}
+      {/* CONTENT CONTAINER */}
       <div className="flex flex-col items-center space-y-1.5 text-center px-2">
         <h3 className="text-[13px] font-medium text-gray-500 uppercase tracking-[0.05em]">
           {data.title}
         </h3>
         <p className="text-[13px] text-gray-400 font-light">
-          {data.bedrooms} bedroom apartment for sale
+          {data.bedroom} {data.bedroom > 1 ? "bedrooms" : "bedroom"} apartment
+          for sale
         </p>
         <p className="text-base font-bold text-[#1a1a1a] pt-1.5">
           {data.price ? `${data.price.toLocaleString()} €` : "Price on request"}
